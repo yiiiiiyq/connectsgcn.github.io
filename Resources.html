@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="with=device-width, initial scale=1.0">
+    <title>Our Resources</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1735b4e424.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="sub-header2">
+      <nav>
+          <a href="index.html"><img src="images/logo.png"></a>
+          <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="AboutUS.html">About</a></li>
+              <li><a href="Feedback.html">Feedback</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+
+            </ul>
+          </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+  <div class="text-box3">
+  <h1>Our Resources</h1>
+  <!---<a href="" class="hero-btn">Visit Us To Know More</a>--->
+  </div>
+
+
+
+    </section>
+
+    <!---- main ------>
+  <section class="main4">
+    <h3>Lesson Materials</h3>
+    <p>Our resources are specifically crafted to suit the interests of the Chinese students and we would also be sharing some materials that we have made during our volunteering period. Our volunteers are caring individuals who wish to impact the world though sharing and volunteering. Do remember to check them out and give us some feedback!</p>
+  </section>
+  <div class ="loginfield">
+    <div id="loginbox">
+      <h1>Login</h1>
+      <div id="login-errorbox">
+        <p id="login-error">Invalid username <br>and/or password</p>
+      </div>
+      <form id="loginform">
+        <label for="usn"><b>Username</b></label>
+        <input type="text" name="usn" id="usn" class="loginformbx" placeholder="Enter username">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" name="psw" id="psw" class="loginformbx" placeholder="Enter password">
+        <span><input type="checkbox" onclick="showpsw()">Show Password</span><br>
+        <input type="submit" value="Login" class="loginbutton" id="loginbtn">
+      </form>
+    </div>
+  </div>
+  <!---<section class="login">
+    <form action='' method="post">
+
+      <div class="Username">
+        <p>Username:
+          <input type="text" name="Username" maxlength="30">
+          </p>
+      </div>
+      <div class="Password">
+        <p>Password:
+          <input type="password" name="Password" maxlength="30">
+        </p>
+      </div>
+        <div class="sumbit">
+          <input type="submit"  value="sumbit"
+          id="submit" />
+        </div>
+
+    </form>
+  </section>--->
+
+  <section class="download">
+    <div class="text-box0">
+        <a href="login.html">Download materials</a>
+    </div>
+  </section>
+
+
+  <section class="footer">
+    <a href="index.html"><img src="images/logo.png"></a>
+     <p>Our Motto<br>Think, Share, Ignite</p>
+     <div class="icons">
+       <i class="fa fa-facebook"></i>
+       <a href="https://twitter.com/ConnectSgcn"><i class="fa fa-twitter"></i></a>
+       <a href="https://www.instagram.com/connectsgcn/"><i class="fa fa-instagram"></i></a>
+       <i class="fa fa-linkedin"></i>
+       <i class="fa fa-wechat"></i>
+     </div>
+     <!--<i class="fa fa-heart-o"></i> -->
+     </section>
+  <section class="author">
+       <p>Done by the organising team</p>
+  </section>
+
+
+<!---javascript for login--->
+  <script>
+    function showpsw(){
+  var show = document.getElementById("psw").type;
+  if(show=='password'){
+   document.getElementById("psw").type = "text";
+   }else{
+    document.getElementById("psw").type = "password";
+   }
+  }
+
+  const loginForm = document.getElementById("loginform");
+  const loginButton = document.getElementById("loginbtn");
+  const loginErrorMsg = document.getElementById("login-error");
+
+  loginButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const username = loginForm.usn.value;
+      const password = loginForm.psw.value;
+
+      if (username === "user" && password === "web") { //edit user and web in the quotation marks, set them as the username and password you want
+          alert("You have successfully logged in.");
+          window.open('target.html') //edit target.html, link it to the resource page, by .html or actual link
+      } else {
+          loginErrorMsg.style.opacity = 1;
+      }
+  })
+  </script>
+  </body>

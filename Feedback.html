@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="with=device-width, initial scale=1.0">
+    <title>Feedback</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/1735b4e424.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="sub-header4">
+      <nav>
+          <a href="index.html"><img src="images/logo.png"></a>
+          <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="AboutUS.html">About</a></li>
+              <li><a href="Resources.html">Resources</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+
+            </ul>
+          </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+  <div class="text-box4">
+  <h1>Feedback</h1>
+  <!---<a href="" class="hero-btn">Visit Us To Know More</a>--->
+  </div>
+
+
+
+    </section>
+
+    <!---- main ------>
+  <section class="main5">
+    <h3>Share your feedback</h3>
+    <p>We would like to hear more from you! Your suggestions are invaluable to us! We would work on the feedback provided to improve our existing sharings.<br>Our Facebook: Connect Sgcn</br>Our Twitter: @ConnectSgcn <br>Our Instagram: connectsgcn</br>Our Linkedin: Connect sgcn<br>Our Wechat: xinghan jihua</br>
+    </p>
+  </section>
+
+  <form action="/database.php" method="post">
+    <div class="fbform">
+      <div class ="fb-email">
+        <p>
+          <label for="email">Please enter your email address:</label>
+          <br><input type="email" name="email">
+        </p>
+      </div>
+      <div class="fb-comments">
+        <p stylle="text-align: center;">
+          <label for="comments">Any comments or suggestions?</label>
+          <br>
+          <textarea class="fb-txt"></textarea>
+          <br><input type="submit" value="submit">
+        </p>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+
+  <section class="footer">
+    <a href="index.html"><img src="images/logo.png"></a>
+     <p>Our Motto<br>Think, Share, Ignite</p>
+     <div class="icons">
+       <i class="fa fa-facebook"></i>
+       <a href="https://twitter.com/ConnectSgcn"><i class="fa fa-twitter"></i></a>
+       <a href="https://www.instagram.com/connectsgcn/"><i class="fa fa-instagram"></i></a>
+       <i class="fa fa-linkedin"></i>
+       <i class="fa fa-wechat"></i>
+     </div>
+     <!--<i class="fa fa-heart-o"></i> -->
+     </section>
+  <section class="author">
+       <p>Done by the organising team</p>
+  </section>
+
+  <script>
+  let textareas = document.querySelectorAll('.fb-txt'),
+      hiddenTxt = document.createElement('div'),
+      content = null;
+  for (let j of textareas) {
+    j.classList.add('txtstuff');
+  }
+  hiddenTxt.classList.add('hiddentxt');
+  hiddenTxt.classList.add('fb-txt');
+  for(let i of textareas) {
+    (function(i) {
+      i.addEventListener('input', function() {
+        // Append hiddentxt to parent of textarea, so the size is correct
+        i.parentNode.appendChild(hiddenTxt);
+        i.style.resize = 'none';
+        i.style.overflow = 'hidden';
+        content = i.value;
+        hiddenTxt.innerHTML = content + '<br style="line-height: 3px;">';
+        hiddenTxt.style.visibility = 'hidden';
+        hiddenTxt.style.display = 'block';
+        i.style.height = hiddenTxt.offsetHeight + 'px';
+        hiddenTxt.style.visibility = 'visible';
+        hiddenTxt.style.display = 'none';
+      });
+    })(i);
+  }
+  </script>
+  </body>
